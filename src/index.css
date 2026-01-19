@@ -5,58 +5,192 @@ html, body {
   background-color: #000 !important;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
   cursor: none !important;
 }
 
-/* --- 2. HERO ONLY: SHINY RED GRID --- */
-.grid-red-shiny {
-  position: absolute;
+/* --- 2. ULTRA-SMOOTH CURSOR --- */
+#cursor-outer, #cursor-inner { 
+  position: fixed !important; 
+  pointer-events: none !important; 
+  z-index: 999 !important; 
+  border-radius: 50% !important; 
+  will-change: transform;
+  transform: translateZ(0);
+}
+#cursor-outer { 
+  width: 40px; 
+  height: 40px; 
+  border: 1px solid #bd3c1b; 
+  box-shadow: 0 0 15px #bd3c1b; 
+  transition: transform 0.1s ease-out;
+}
+#cursor-inner { 
+  width: 6px; 
+  height: 6px; 
+  background: #fff; 
+  transition: transform 0.08s ease-out;
+}
+
+/* --- 3. NEON FRAME --- */
+.neon-frame {
+  position: fixed;
   inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.neon-frame::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: #bd3c1b;
+  box-shadow: 
+    0 0 20px #bd3c1b,
+    0 0 40px #bd3c1b,
+    0 20px 100px rgba(189, 60, 27, 0.8);
+  animation: neon-glow 4s ease-in-out infinite alternate;
+}
+
+.neon-frame::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: #bd3c1b;
+  box-shadow: 
+    0 0 20px #bd3c1b,
+    0 0 40px #bd3c1b,
+    0 -20px 100px rgba(189, 60, 27, 0.8);
+  animation: neon-glow 4s ease-in-out infinite alternate-reverse;
+}
+
+/* --- 4. NEON CONTAINER --- */
+.neon-bg-container {
+  position: relative;
+  background-color: #000;
+  min-height: 100vh;
+}
+
+/* --- 5. FASTER NEON PARTICLES (2-4s SPEED) --- */
+.neon-particles, 
+.neon-particle-bottom-left,
+.neon-particle-bottom-right,
+.neon-particle-center,
+.neon-particle-top-center,
+.neon-particle-mid-left,
+.neon-particle-mid-right,
+.neon-particle-bottom-center,
+.neon-particle-upper-right {
+  position: fixed;
   z-index: 1;
   pointer-events: none;
-  background-image: 
-    linear-gradient(to right, rgba(255, 55, 0, 0.4) 2px, transparent 2px),
-    linear-gradient(to bottom, rgba(255, 55, 0, 0.4) 2px, transparent 2px);
-  background-size: 60px 60px;
-  filter: drop-shadow(0 0 5px rgba(255, 55, 0, 0.6));
-  animation: gridMove 20s linear infinite;
+  will-change: transform, opacity;
 }
 
-/* --- 3. HERO ONLY: SHINY CORNER GLOWS --- */
-.hero-corner-glow {
+/* TOP-LEFT - 2.5s FAST */
+.neon-particles::before {
+  content: '';
   position: absolute;
-  width: 50vw;
-  height: 50vw;
-  background: radial-gradient(circle, rgba(255, 55, 0, 0.25) 0%, transparent 70%);
-  filter: blur(100px);
-  mix-blend-mode: screen;
-  pointer-events: none;
-  z-index: 2;
+  top: 10%;
+  left: 10%;
+  width: 140px;
+  height: 100px;
+  background: radial-gradient(ellipse, rgba(189, 60, 27, 0.9) 0%, transparent 70%);
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(189, 60, 27, 0.6);
+  filter: blur(2px);
+  animation: neon-motion 2.5s ease-in-out infinite alternate;
 }
 
-@keyframes gridMove {
-  0% { background-position: 0 0; }
-  100% { background-position: 60px 60px; }
+/* TOP-RIGHT - 2.2s FAST */
+.neon-particles::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(ellipse, rgba(189, 60, 27, 0.8) 0%, transparent 70%);
+  border-radius: 50%;
+  box-shadow: 0 0 60px rgba(189, 60, 27, 0.5);
+  filter: blur(2px);
+  animation: neon-motion 2.2s ease-in-out infinite alternate-reverse;
 }
 
-/* --- 4. MANDATORY SHARP EDGES & CURSOR --- */
-* { border-radius: 0px !important; }
+/* FASTER PARTICLE POSITIONS & SPEEDS */
+.neon-particle-bottom-left { 
+  width: 110px; height: 130px; 
+  bottom: 15%; left: 12%;
+  animation: neon-motion 2.8s ease-in-out infinite alternate;
+}
+.neon-particle-bottom-right { 
+  width: 130px; height: 110px; 
+  bottom: 10%; right: 10%;
+  animation: neon-motion 2.4s ease-in-out infinite alternate-reverse;
+}
+.neon-particle-center { 
+  width: 80px; height: 80px; 
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  animation: neon-motion 2.6s ease-in-out infinite alternate;
+}
+.neon-particle-top-center { 
+  width: 90px; height: 70px; 
+  top: 15%; left: 50%; transform: translateX(-50%);
+  animation: neon-motion 3s ease-in-out infinite alternate;
+}
+.neon-particle-mid-left { 
+  width: 70px; height: 100px; 
+  top: 40%; left: 8%;
+  animation: neon-motion 2.7s ease-in-out infinite alternate;
+}
+.neon-particle-mid-right { 
+  width: 100px; height: 80px; 
+  top: 45%; right: 8%;
+  animation: neon-motion 2.1s ease-in-out infinite alternate-reverse;
+}
+.neon-particle-bottom-center { 
+  width: 75px; height: 90px; 
+  bottom: 20%; left: 50%; transform: translateX(-50%);
+  animation: neon-motion 2.9s ease-in-out infinite alternate;
+}
+.neon-particle-upper-right { 
+  width: 95px; height: 75px; 
+  top: 25%; right: 15%;
+  animation: neon-motion 2.3s ease-in-out infinite alternate;
+}
 
-.cursor-outline, .cursor-dot {
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  border-radius: 9999px !important;
+/* COMMON PARTICLE STYLE */
+.neon-particle-bottom-left,
+.neon-particle-bottom-right,
+.neon-particle-center,
+.neon-particle-top-center,
+.neon-particle-mid-left,
+.neon-particle-mid-right,
+.neon-particle-bottom-center,
+.neon-particle-upper-right {
+  background: radial-gradient(ellipse, rgba(189, 60, 27, 0.7) 0%, transparent 70%);
+  border-radius: 50%;
+  box-shadow: 0 0 40px rgba(189, 60, 27, 0.5);
+  filter: blur(1.5px);
 }
-.cursor-outline {
-  width: 90px;
-  height: 90px;
-  border: 1.5px solid #ff3700;
-  box-shadow: 0 0 20px rgba(255, 55, 0, 0.4);
+
+/* --- 6. ANIMATIONS --- */
+@keyframes neon-glow {
+  0% { opacity: 0.5; transform: scaleX(0.98); }
+  100% { opacity: 1; transform: scaleX(1); }
 }
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  background: #ff3700;
+
+@keyframes neon-motion {
+  0% { opacity: 0.8; transform: scale(1) rotate(0deg); filter: blur(1.5px) brightness(1); }
+  20% { opacity: 0.4; transform: scale(1.4) rotate(8deg); filter: blur(2.5px) brightness(0.5); }
+  40% { opacity: 0.2; transform: scale(1.8) rotate(-12deg); filter: blur(3.5px) brightness(0.3); }
+  60% { opacity: 0.5; transform: scale(1.2) rotate(5deg); filter: blur(2px) brightness(0.7); }
+  80% { opacity: 0.7; transform: scale(0.9) rotate(-8deg); filter: blur(1.8px) brightness(0.9); }
+  100% { opacity: 0.9; transform: scale(1.1) rotate(3deg); filter: blur(1.2px) brightness(1.2); }
 }

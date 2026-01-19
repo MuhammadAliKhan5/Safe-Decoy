@@ -1,42 +1,55 @@
 import React from 'react';
 
-export const UrgencySection = () => (
-  <section className="py-24 px-6 text-center border-t border-zinc-900 bg-black relative">
-    {/* Subtle Glow - Much smaller and tighter */}
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#ff3700]/10 blur-[80px] pointer-events-none"></div>
+export const UrgencySection = () => {
+  return (
+    <section className="py-24 px-6 md:px-20 bg-transparent border-t border-zinc-900 relative">
 
-    <div className="max-w-3xl mx-auto relative z-10">
-      {/* Refined Heading */}
-      <h2 className="text-4xl md:text-6xl font-black mb-4 tracking-tight uppercase italic">
-        COMING <span className="text-[#ff3700]">SOON</span>
-      </h2>
+      {/* Subtle Glow for Neon Effect */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#ff3700]/10 blur-[80px] pointer-events-none"></div>
 
-      {/* Clean Date Section */}
-      <div className="flex items-center justify-center gap-4 mb-8">
-        <div className="h-[1px] w-8 bg-zinc-800"></div>
-        <span className="text-xl md:text-2xl font-mono font-bold text-zinc-400">Q3 2026</span>
-        <div className="h-[1px] w-8 bg-zinc-800"></div>
+      <div className="max-w-3xl mx-auto relative z-10 text-center space-y-12">
+
+        {/* Coming Soon Text */}
+        <h2 className="text-4xl md:text-6xl font-black uppercase text-white">
+          COMING <span className="text-[#bd3c1b]">SOON</span>
+        </h2>
+
+
+        {/* Subtext */}
+        <p className="text-zinc-400 text-sm md:text-base uppercase tracking-[0.2em] leading-relaxed">
+          SafeDecoy is currently in development and will be available in a few months.
+          Be the first to know when we launch.
+        </p>
+
+        {/* Email Subscribe Section */}
+        <div className="space-y-6">
+          {/* Title */}
+          <h3 className="text-2xl md:text-4xl font-black uppercase tracking-tight text-white">
+            Get Early Access & Exclusive Updates
+          </h3>
+
+          {/* Copy */}
+          <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-xl mx-auto">
+            Be among the first to know when SafeDecoy launches. Sign up to receive updates and special offers.
+          </p>
+
+          {/* Form */}
+          <form className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-xl mx-auto">
+            <input
+              type="email"
+              placeholder="Enter Email Address"
+              className="bg-zinc-900/80 border border-zinc-700 px-6 py-4 text-white text-sm w-full md:flex-1 rounded outline-none placeholder:text-zinc-500"
+            />
+            <button
+              type="submit"
+              className="px-8 py-4 bg-[#bd3c1b] text-white uppercase font-black text-sm rounded hover:bg-white hover:text-black transition-all duration-300"
+            >
+              Subscribe Now
+            </button>
+          </form>
+        </div>
+
       </div>
-
-      <p className="text-zinc-500 text-sm md:text-base uppercase tracking-[0.2em] mb-12 max-w-lg mx-auto leading-relaxed">
-        Exclusive access for <span className="text-zinc-300">verified executives</span> and high-net-worth clients.
-      </p>
-
-      {/* Compact Sharp Button */}
-      <div className="relative inline-block group">
-        {/* Subtle corner accents */}
-        <div className="absolute -top-2 -left-2 w-3 h-3 border-t border-l border-[#ff3700]"></div>
-        <div className="absolute -bottom-2 -right-2 w-3 h-3 border-b border-r border-[#ff3700]"></div>
-
-        <button className="relative px-10 py-4 bg-transparent border border-zinc-700 overflow-hidden transition-all duration-300 hover:border-[#ff3700]">
-          <span className="relative z-10 font-bold text-sm uppercase tracking-widest group-hover:text-white transition-colors">
-            Request Early Access
-          </span>
-          
-          {/* Fill effect - Sleeker transition */}
-          <div className="absolute bottom-0 left-0 w-full h-0 bg-[#ff3700] group-hover:h-full transition-all duration-300 ease-in-out"></div>
-        </button>
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
