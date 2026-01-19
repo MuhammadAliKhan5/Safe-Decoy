@@ -5,30 +5,6 @@ html, body {
   background-color: #000 !important;
   margin: 0;
   padding: 0;
-  cursor: none !important;
-}
-
-/* --- 2. ULTRA-SMOOTH CURSOR --- */
-#cursor-outer, #cursor-inner { 
-  position: fixed !important; 
-  pointer-events: none !important; 
-  z-index: 999 !important; 
-  border-radius: 50% !important; 
-  will-change: transform;
-  transform: translateZ(0);
-}
-#cursor-outer { 
-  width: 40px; 
-  height: 40px; 
-  border: 1px solid #bd3c1b; 
-  box-shadow: 0 0 15px #bd3c1b; 
-  transition: transform 0.1s ease-out;
-}
-#cursor-inner { 
-  width: 6px; 
-  height: 6px; 
-  background: #fff; 
-  transition: transform 0.08s ease-out;
 }
 
 /* --- 3. NEON FRAME --- */

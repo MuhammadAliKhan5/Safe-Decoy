@@ -19,7 +19,15 @@ const ProductTease = () => {
 
         {/* SHINY INTERNAL CORE DEVICE */}
         <div className="flex justify-center relative">
-          <img className='h-120' src="secy.jpg" alt="" />
+          <img 
+            className='h-120 rounded-2xl border border-zinc-800 
+                       transition-all duration-500 ease-in-out
+                       hover:scale-105 hover:border-[#bd3c1b]/50 
+                       hover:shadow-[0_0_40px_-10px_rgba(189,60,27,0.3)]
+                       cursor-pointer' 
+            src="secy.jpg" 
+            alt="SafeDecoy internal core" 
+          />
         </div>
 
       </div>

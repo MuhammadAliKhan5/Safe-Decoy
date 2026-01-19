@@ -1,5 +1,4 @@
 import React from 'react';
-import CustomCursor from './components/CustomCursor';
 import Hero from './components/Hero';
 import ProductTease from './components/ProductTease';
 import Features from './components/Features';
@@ -9,9 +8,6 @@ import { Footer } from './components/Footer';
 const App = () => {
   return (
     <div className="relative w-full min-h-screen bg-black overflow-x-hidden">
-      
-      {/* 1. MOUSE CURSOR - FIXED Z-INDEX */}
-      <CustomCursor />
 
       {/* 2. Hero Section (no neon bg) */}
       <Hero />
