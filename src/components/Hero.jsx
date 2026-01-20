@@ -27,9 +27,9 @@ const Hero = () => {
         {/* LOGO */}
         <div className="mb-12">
           <img
-            src="reallogo.png"
+            src="ali.png"
             alt="SafeDecoy Logo"
-            className="h-32 md:h-40 w-auto object-contain drop-shadow-[0_0_30px_rgba(66,21,189,0.5)]"
+            className="h-12 md:h-20 w-auto object-contain drop-shadow-[0_0_30px_rgba(66,21,189,0.5)]"
           />
         </div>
 
