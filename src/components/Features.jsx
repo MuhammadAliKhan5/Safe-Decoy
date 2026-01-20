@@ -9,16 +9,14 @@ const FeatureCard = ({ icon: Icon, title, desc }) => (
     group
     hover:border-[#4215bd] 
     hover:-translate-y-3
-    /* Main Outer Glow - Pure Blue */
+    /* Main Outer Glow - Blue */
     hover:shadow-[0_0_60px_-10px_rgba(66,21,189,0.8)]
-    /* Added inner background tint on hover */
     hover:bg-[#4215bd]/5
   ">
     <Icon 
       className="
         w-12 h-12 text-[#4215bd] mb-6 
         transition-all duration-500
-        /* Fixed: Changed red/orange glow to full blue */
         group-hover:drop-shadow-[0_0_15px_rgba(66,21,189,0.9)]
         group-hover:scale-110
       " 
@@ -35,10 +33,13 @@ const FeatureCard = ({ icon: Icon, title, desc }) => (
 const Features = () => (
   <section className="py-32 px-6 md:px-20 border-t border-zinc-900 bg-black">
     <div className="max-w-7xl mx-auto">
+      
+      {/* SECTION HEADER */}
       <h2 className="text-5xl md:text-7xl font-black uppercase mb-20 text-white">
         Why <span className="text-[#4215bd] drop-shadow-[0_0_20px_rgba(66,21,189,0.4)]">SafeDecoy?</span>
       </h2>
 
+      {/* FEATURES GRID */}
       <div className="grid md:grid-cols-3 gap-10">
         <FeatureCard 
           icon={Shield} 
@@ -56,6 +57,14 @@ const Features = () => (
           desc="Tracks the device’s location for a fast and precise response." 
         />
       </div>
+
+      {/* CTA BUTTON SECTION */}
+      <div className="mt-20 flex justify-center">
+        <button className="bg-white text-black font-black uppercase tracking-widest px-10 py-5 hover:bg-[#4215bd] hover:text-white transition-all duration-300 text-sm border border-white hover:border-[#4215bd] shadow-2xl">
+          Stay Informed – Get Early Access
+        </button>
+      </div>
+
     </div>
   </section>
 );
