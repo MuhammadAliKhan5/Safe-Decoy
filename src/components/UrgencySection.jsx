@@ -57,7 +57,7 @@ export const UrgencySection = () => {
               <img 
                 src="extra.png" // Insert your image path here
                 alt="SafeDecoy Preview" 
-                className="w-full h-auto object-cover rounded-2xl border border-zinc-400 
+                className="w-full h-auto object-cover rounded-2xl border 
                        transition-all duration-500 ease-in-out
                        hover:scale-105 hover:border-[#4215bd] 
                        hover:shadow-[0_0_40px_-10px_rgba(189,60,27,0.3)]

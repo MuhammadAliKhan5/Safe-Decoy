@@ -46,8 +46,8 @@ const Hero = () => {
         </p>
 
         {/* SINGLE BUTTON CTA */}
-        <button className="bg-white text-black font-black uppercase tracking-widest px-12 py-5 hover:bg-[#4215bd] hover:text-white transition-all duration-300 text-sm border border-white hover:border-[#4215bd] shadow-2xl">
-          Get Notified First – Join the List
+        <button className="bg-white text-black font-black uppercase tracking-widest px-10 py-5 hover:bg-[#4215bd] hover:text-white transition-all duration-300 text-sm border border-white hover:border-[#4215bd] shadow-2xl">
+          Get Notified First
         </button>
       </div>
     </section>
