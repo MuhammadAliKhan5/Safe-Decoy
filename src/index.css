@@ -23,11 +23,11 @@ html, body {
   left: 5%;
   right: 5%;
   height: 2px;
-  background: #bd3c1b;
+  background: #4215bd; /* Updated */
   box-shadow: 
-    0 0 20px #bd3c1b,
-    0 0 40px #bd3c1b,
-    0 20px 100px rgba(189, 60, 27, 0.8);
+    0 0 20px #4215bd,
+    0 0 40px #4215bd,
+    0 20px 100px rgba(66, 21, 189, 0.8); /* Updated RGBA */
   animation: neon-glow 4s ease-in-out infinite alternate;
 }
 
@@ -38,11 +38,11 @@ html, body {
   left: 5%;
   right: 5%;
   height: 2px;
-  background: #bd3c1b;
+  background: #4215bd; /* Updated */
   box-shadow: 
-    0 0 20px #bd3c1b,
-    0 0 40px #bd3c1b,
-    0 -20px 100px rgba(189, 60, 27, 0.8);
+    0 0 20px #4215bd,
+    0 0 40px #4215bd,
+    0 -20px 100px rgba(66, 21, 189, 0.8); /* Updated RGBA */
   animation: neon-glow 4s ease-in-out infinite alternate-reverse;
 }
 
@@ -53,7 +53,7 @@ html, body {
   min-height: 100vh;
 }
 
-/* --- 5. FASTER NEON PARTICLES (2-4s SPEED) --- */
+/* --- 5. FASTER NEON PARTICLES --- */
 .neon-particles, 
 .neon-particle-bottom-left,
 .neon-particle-bottom-right,
@@ -69,7 +69,7 @@ html, body {
   will-change: transform, opacity;
 }
 
-/* TOP-LEFT - 2.5s FAST */
+/* TOP-LEFT */
 .neon-particles::before {
   content: '';
   position: absolute;
@@ -77,14 +77,14 @@ html, body {
   left: 10%;
   width: 140px;
   height: 100px;
-  background: radial-gradient(ellipse, rgba(189, 60, 27, 0.9) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(66, 21, 189, 0.9) 0%, transparent 70%); /* Updated RGBA */
   border-radius: 50%;
-  box-shadow: 0 0 50px rgba(189, 60, 27, 0.6);
+  box-shadow: 0 0 50px rgba(66, 21, 189, 0.6); /* Updated RGBA */
   filter: blur(2px);
   animation: neon-motion 2.5s ease-in-out infinite alternate;
 }
 
-/* TOP-RIGHT - 2.2s FAST */
+/* TOP-RIGHT */
 .neon-particles::after {
   content: '';
   position: absolute;
@@ -92,53 +92,11 @@ html, body {
   right: 10%;
   width: 120px;
   height: 120px;
-  background: radial-gradient(ellipse, rgba(189, 60, 27, 0.8) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(66, 21, 189, 0.8) 0%, transparent 70%); /* Updated RGBA */
   border-radius: 50%;
-  box-shadow: 0 0 60px rgba(189, 60, 27, 0.5);
+  box-shadow: 0 0 60px rgba(66, 21, 189, 0.5); /* Updated RGBA */
   filter: blur(2px);
   animation: neon-motion 2.2s ease-in-out infinite alternate-reverse;
-}
-
-/* FASTER PARTICLE POSITIONS & SPEEDS */
-.neon-particle-bottom-left { 
-  width: 110px; height: 130px; 
-  bottom: 15%; left: 12%;
-  animation: neon-motion 2.8s ease-in-out infinite alternate;
-}
-.neon-particle-bottom-right { 
-  width: 130px; height: 110px; 
-  bottom: 10%; right: 10%;
-  animation: neon-motion 2.4s ease-in-out infinite alternate-reverse;
-}
-.neon-particle-center { 
-  width: 80px; height: 80px; 
-  top: 50%; left: 50%; transform: translate(-50%, -50%);
-  animation: neon-motion 2.6s ease-in-out infinite alternate;
-}
-.neon-particle-top-center { 
-  width: 90px; height: 70px; 
-  top: 15%; left: 50%; transform: translateX(-50%);
-  animation: neon-motion 3s ease-in-out infinite alternate;
-}
-.neon-particle-mid-left { 
-  width: 70px; height: 100px; 
-  top: 40%; left: 8%;
-  animation: neon-motion 2.7s ease-in-out infinite alternate;
-}
-.neon-particle-mid-right { 
-  width: 100px; height: 80px; 
-  top: 45%; right: 8%;
-  animation: neon-motion 2.1s ease-in-out infinite alternate-reverse;
-}
-.neon-particle-bottom-center { 
-  width: 75px; height: 90px; 
-  bottom: 20%; left: 50%; transform: translateX(-50%);
-  animation: neon-motion 2.9s ease-in-out infinite alternate;
-}
-.neon-particle-upper-right { 
-  width: 95px; height: 75px; 
-  top: 25%; right: 15%;
-  animation: neon-motion 2.3s ease-in-out infinite alternate;
 }
 
 /* COMMON PARTICLE STYLE */
@@ -150,11 +108,21 @@ html, body {
 .neon-particle-mid-right,
 .neon-particle-bottom-center,
 .neon-particle-upper-right {
-  background: radial-gradient(ellipse, rgba(189, 60, 27, 0.7) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(66, 21, 189, 0.7) 0%, transparent 70%); /* Updated RGBA */
   border-radius: 50%;
-  box-shadow: 0 0 40px rgba(189, 60, 27, 0.5);
+  box-shadow: 0 0 40px rgba(66, 21, 189, 0.5); /* Updated RGBA */
   filter: blur(1.5px);
 }
+
+/* Position-specific classes remain the same, animations will now use the new color above */
+.neon-particle-bottom-left { width: 110px; height: 130px; bottom: 15%; left: 12%; animation: neon-motion 2.8s ease-in-out infinite alternate; }
+.neon-particle-bottom-right { width: 130px; height: 110px; bottom: 10%; right: 10%; animation: neon-motion 2.4s ease-in-out infinite alternate-reverse; }
+.neon-particle-center { width: 80px; height: 80px; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: neon-motion 2.6s ease-in-out infinite alternate; }
+.neon-particle-top-center { width: 90px; height: 70px; top: 15%; left: 50%; transform: translateX(-50%); animation: neon-motion 3s ease-in-out infinite alternate; }
+.neon-particle-mid-left { width: 70px; height: 100px; top: 40%; left: 8%; animation: neon-motion 2.7s ease-in-out infinite alternate; }
+.neon-particle-mid-right { width: 100px; height: 80px; top: 45%; right: 8%; animation: neon-motion 2.1s ease-in-out infinite alternate-reverse; }
+.neon-particle-bottom-center { width: 75px; height: 90px; bottom: 20%; left: 50%; transform: translateX(-50%); animation: neon-motion 2.9s ease-in-out infinite alternate; }
+.neon-particle-upper-right { width: 95px; height: 75px; top: 25%; right: 15%; animation: neon-motion 2.3s ease-in-out infinite alternate; }
 
 /* --- 6. ANIMATIONS --- */
 @keyframes neon-glow {

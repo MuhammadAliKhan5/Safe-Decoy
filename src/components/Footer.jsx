@@ -7,30 +7,23 @@ export const Footer = () => {
         
         {/* Decorative Top Branding - NOW "CONTACT INFO" */}
         <div className="flex items-center gap-4 mb-16">
-          <div className="w-20 h-[1px] bg-gradient-to-r from-transparent to-[#bd3c1b]"></div>
-          <div className="w-2 h-2 bg-[#bd3c1b] rotate-45 shadow-[0_0_10px_#ff3700]"></div>
-          <div className="w-[120px] h-[1px] bg-gradient-to-r from-transparent via-[#bd3c1b] to-transparent"></div>
-          <div className="text-[14px] font-mono tracking-[0.4em] text-[#ef4019] uppercase opacity-80">CONTACT INFO</div>
-          <div className="w-[120px] h-[1px] bg-gradient-to-l from-transparent via-[#bd3c1b] to-transparent"></div>
-          <div className="w-2 h-2 bg-[#bd3c1b] rotate-45 shadow-[0_0_10px_#ff3700]"></div>
-          <div className="w-20 h-[1px] bg-gradient-to-l from-transparent to-[#bd3c1b]"></div>
+          <div className="w-20 h-[1px] bg-gradient-to-r from-transparent to-[#4215bd]"></div>
+          <div className="w-2 h-2 bg-[#4215bd] rotate-45 shadow-[0_0_10px_#ff3700]"></div>
+          <div className="w-[120px] h-[1px] bg-gradient-to-r from-transparent via-[#4215bd] to-transparent"></div>
+          <div className="text-[14px] font-mono tracking-[0.4em] text-[#4406f0] uppercase opacity-80">CONTACT INFO</div>
+          <div className="w-[120px] h-[1px] bg-gradient-to-l from-transparent via-[#4215bd] to-transparent"></div>
+          <div className="w-2 h-2 bg-[#4215bd] rotate-45 shadow-[0_0_10px_#ff3700]"></div>
+          <div className="w-20 h-[1px] bg-gradient-to-l from-transparent to-[#4215bd]"></div>
         </div>
 
         {/* Contact Email - SAME */}
-        <div className="text-center space-y-4 mb-24">
+        <div className="text-center space-y-4 mb-10 mt-6">
           <a 
             href="mailto:inquiries@safedecoy.com" 
-            className="block font-black text-3xl md:text-5xl tracking-tighter text-white hover:text-[#bd3c1b] transition-all duration-500 uppercase italic antialiased"
+            className="block font-black text-xl md:text-3xl tracking-tighter text-white hover:text-[#4215bd] transition-all duration-500 uppercase italic antialiased"
           >
             inquiries@safedecoy.com
           </a>
-        </div>
-
-        {/* SIMPLE CENTERED COPYRIGHT */}
-        <div className="text-center">
-          <p className="font-mono text-[12px] tracking-[0.3em] uppercase text-zinc-500">
-            @Copyright 2026 Safe-decoy
-          </p>
         </div>
       </div>
     </footer>

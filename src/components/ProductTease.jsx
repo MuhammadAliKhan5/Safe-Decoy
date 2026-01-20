@@ -9,7 +9,7 @@ const ProductTease = () => {
         <div>
           <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8 text-white">
             SafeDecoy: <br />
-            Where <span className="text-[#bd3c1b]">Security</span> Meets Innovation.
+            Where <span className="text-[#4215bd]">Security</span> Meets Innovation.
           </h2>
           <p className="text-zinc-400 text-lg leading-relaxed border-l-2 border-zinc-800 pl-6">
             Unparalleled peace of mind with a deceptively simple design.
@@ -20,12 +20,12 @@ const ProductTease = () => {
         {/* SHINY INTERNAL CORE DEVICE */}
         <div className="flex justify-center relative">
           <img 
-            className='h-120 rounded-2xl border border-zinc-800 
+            className='h-auto rounded-2xl border border-zinc-400 
                        transition-all duration-500 ease-in-out
-                       hover:scale-105 hover:border-[#bd3c1b]/50 
+                       hover:scale-105 hover:border-[#4215bd] 
                        hover:shadow-[0_0_40px_-10px_rgba(189,60,27,0.3)]
                        cursor-pointer' 
-            src="secy.jpg" 
+            src="bg-image.png" 
             alt="SafeDecoy internal core" 
           />
         </div>
